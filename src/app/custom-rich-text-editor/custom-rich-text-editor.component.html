@@ -1,0 +1,16 @@
+<div class="editor-container">
+    <div class="toolbar">
+      <button (click)="toggleBold()">Bold</button>
+      <button (click)="toggleItalic()">Italic</button>
+      <button (click)="toggleUnderline()">Underline</button>
+      <button (click)="changeTextColor()">Text Color</button>
+      <input type="file" (change)="uploadImage($event)" />
+    </div>
+    <div
+      contenteditable="true"
+      class="editor"
+      (input)="updateContent()"
+      [innerHTML]="editorContent"
+    ></div>
+  </div>
+  
