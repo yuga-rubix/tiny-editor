@@ -7,7 +7,7 @@
   <br/>
 </div>
 <div style="position: relative; width: auto; box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2); text-align: left; color: #626262; font-size: 14px; padding: 20px;">
-    <div (input)="updateContent()" class="body-1" #bodyContent contenteditable="true"  spellcheck="false"  style="position: relative;" >
+    <div (input)="updateContent()" (click)="handleLeftClick($event)" (contextmenu)="showContextMenu($event)" class="body-1" #bodyContent contenteditable="true"  spellcheck="false"  style="position: relative;" >
         <p><img src="https://tiny.cloud/images/medium-pic.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 100%;"></p>
         <br/>
         <h2 style="color: #1976D2; font-size: 2em;">The world’s first rich text editor in the cloud</h2>
@@ -50,3 +50,7 @@
 
 <div class="target-div-header" #targetDivHeader></div>
 <div class="target-div-body" #targetDivBody></div>
+
+<div *ngIf="selectedText" class="context-menu" [style]="getContextMenuPosition()">
+    <div *ngFor="let color of colorOptions" [style]="getContextMenuColor(color)" class="color-option" (click)="changeTextColor(color)"></div>
+  </div>
