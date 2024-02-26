@@ -1,0 +1,15 @@
+<!-- tool-editor.component.html -->
+
+<div>
+    <button (click)="addParagraph()">Add Paragraph</button>
+    <button (click)="addImage()">Add Image</button>
+    <button (click)="addBulletPoint()">Add Bullet Point</button>
+  </div>
+  <div  class="editor-container">
+    <div class="editor-content" contenteditable="true" [innerHTML]="editorContent"  (input)="updateContent()" #editorContentDiv></div>
+  </div>
+  <div class="editor-container">
+    <h2>Preview</h2>
+    <div [innerHTML]="editorContent"></div>
+  </div>
+  
