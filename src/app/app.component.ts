@@ -6,6 +6,7 @@ import { CustomRichTextEditorComponent } from './custom-rich-text-editor/custom-
 import { TextEditorComponent } from './text-editor/text-editor.component';
 import { FormsModule } from '@angular/forms';
 import { InlineEditorComponent } from './inline-editor/inline-editor.component';
+import { QuillEditorComponent } from './quill-editor/quill-editor.component';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { InlineEditorComponent } from './inline-editor/inline-editor.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet,FormsModule,InlineEditorComponent, InteractiveEditorComponent,CustomRichTextEditorComponent,TextEditorComponent]
+    imports: [CommonModule, RouterOutlet,QuillEditorComponent,FormsModule,InlineEditorComponent, InteractiveEditorComponent,CustomRichTextEditorComponent,TextEditorComponent]
 })
 export class AppComponent  {
   title = 'custom-editor';
